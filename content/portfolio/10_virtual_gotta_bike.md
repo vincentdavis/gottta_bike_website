@@ -1,8 +1,8 @@
 ---
-title: Teams GOTTA.BIKE
-image: images/teams_gotta_bike.png
-link: https://teams.gotta.bike/
+title: Virtual Teams (Zwift) GOTTA.BIKE
+image: images/virtual_teams.png
+link: https://github.com/vincentdavis/GOTTA_BIKE_virtual_team_platform
 link_text: View Project
 ---
 
-Cycling League and Team Management Software. Free and Open Source web application.
+Self-hosted web platform for managing virtual cycling teams on Zwift, Traning peaks Virtual, MyWhoosh.
