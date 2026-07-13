@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build script: reads markdown content files and generates index.html."""
 
+import hashlib
 import re
 from datetime import date
 from html import escape
@@ -116,10 +117,17 @@ def render_card(card, number):
                 </div>"""
 
 
+def asset_version(rel_path):
+    """Short content hash of a static asset, used to bust browser caches."""
+    return hashlib.md5((ROOT / rel_path).read_bytes()).hexdigest()[:8]
+
+
 def apply_globals(html, project_count):
     """Fill placeholders shared by every template."""
     html = html.replace("{{year}}", str(date.today().year))
     html = html.replace("{{project_count}}", f"{project_count:02d}")
+    html = html.replace("{{css_v}}", asset_version("css/styles.css"))
+    html = html.replace("{{js_v}}", asset_version("js/main.js"))
     return html
 
 
