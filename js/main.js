@@ -1,53 +1,50 @@
-// Portfolio Site JavaScript
+// GOTTA.BIKE site JavaScript
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Close mobile nav on link click
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const navCollapse = document.querySelector('.navbar-collapse');
 
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
-            if (navCollapse.classList.contains('show')) {
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            if (navCollapse && navCollapse.classList.contains('show')) {
                 navCollapse.classList.remove('show');
             }
         });
     });
 
-    // Form submission handler (prevents page reload for static site)
-    const form = document.querySelector('#contact form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+    // Navbar background change on scroll
+    const navbar = document.querySelector('.site-nav');
+    function updateNav() {
+        if (navbar) {
+            navbar.classList.toggle('is-scrolled', window.scrollY > 40);
+        }
+    }
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
 
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+    // Reveal elements as they scroll into view
+    const revealEls = document.querySelectorAll('.reveal');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            // Basic validation
-            if (!name || !email || !message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-
-            // For a static site, you would typically:
-            // 1. Use a service like Formspree, Netlify Forms, or EmailJS
-            // 2. Or integrate with a backend API
-
-            alert('Thank you for your message! This is a static site demo. To enable form submission, integrate with a form service.');
-            form.reset();
+    if (!('IntersectionObserver' in window) || reducedMotion) {
+        revealEls.forEach(function (el) {
+            el.classList.add('is-visible');
+        });
+    } else {
+        const observer = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        revealEls.forEach(function (el) {
+            observer.observe(el);
         });
     }
-
-    // Navbar background change on scroll
-    const navbar = document.querySelector('.navbar');
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('shadow');
-        } else {
-            navbar.classList.remove('shadow');
-        }
-    });
 });

@@ -1,8 +1,9 @@
 ---
-title: ClubLadder Chrome plugin
+title: ClubLadder Chrome Plugin
+tag: Chrome extension
 image: images/clubladder_chrome.png
 link: "https://github.com/vincentdavis/GOTTA_BIKE_club_laddder_ext/releases"
 link_text: View Project
 ---
 
-A Chrome extension to export data from [ClubLadder](https://ladder.cycleracing.club/) to CSV or json.
+A Chrome extension to export data from [ClubLadder](https://ladder.cycleracing.club/) to CSV or JSON.

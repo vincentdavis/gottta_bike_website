@@ -1,5 +1,6 @@
 ---
-title: Suace4Zwift plugin
+title: Sauce4Zwift Plugin
+tag: Sauce4Zwift mod
 image: images/sauce_plugin.png
 link: "https://github.com/vincentdavis/GOTTA_BIKE_sauce"
 link_text: View Project

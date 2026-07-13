@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>GOTTA.BIKE — Cycling software, tools &amp; research</title>
+    <meta name="description" content="Cycling software, tools and research by Vincent Davis — team management platforms, an indoor cycling game, Zwift tools, Sauce4Zwift mods, GPX-to-STL 3D printing, and more.">
+    <meta property="og:title" content="GOTTA.BIKE — Cycling software, tools &amp; research">
+    <meta property="og:description" content="Cycling software, tools and research by Vincent Davis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotta.bike/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%B4%3C/text%3E%3C/svg%3E">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -14,14 +24,14 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
 
     <!-- Navigation -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top site-nav">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Projects</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand site-brand" href="#hero">GOTTA<span class="brand-dot">.</span>BIKE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="#hero">Home</a>
                     </li>
@@ -29,10 +39,10 @@
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a class="btn-race btn-race--sm" href="https://github.com/vincentdavis" target="_blank" rel="noopener"><i class="bi bi-github"></i>GitHub</a>
                     </li>
                 </ul>
             </div>
@@ -40,124 +50,153 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-section d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold mb-3">GOTTA.BIKE</h1>
-            <div class="lead mb-4"><p>A PASSION FOR CYCLING<br>
+    <header id="hero" class="hero-section">
+        <div class="hero-stripes" aria-hidden="true"></div>
+        <div class="container hero-inner">
+            <p class="hero-kicker reveal-load">Est. Colorado &middot; 06 projects &middot; open source</p>
+            <h1 class="hero-title reveal-load">GOTTA.BIKE</h1>
+            <div class="hero-lead reveal-load"><p>A PASSION FOR CYCLING<br>
 by: Vincent Davis</p></div>
-            <a href="#projects" class="btn btn-primary btn-lg me-2">Projects</a>
-            <a href="contact.html" class="btn btn-outline-light btn-lg">Get In Touch</a>
+            <div class="hero-cta reveal-load">
+                <a href="#projects" class="btn-race">View projects<i class="bi bi-arrow-down"></i></a>
+                <a href="contact.html" class="btn-ghost">Get in touch</a>
+            </div>
         </div>
-    </section>
+        <div class="road-line road-line--hero" aria-hidden="true"></div>
+    </header>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+            <span class="marquee__chunk">Ride &#9670; Build &#9670; Race &#9670; Repeat &#9670; GOTTA.BIKE &#9670; Ride &#9670; Build &#9670; Race &#9670; Repeat &#9670; GOTTA.BIKE &#9670;&nbsp;</span><span class="marquee__chunk">Ride &#9670; Build &#9670; Race &#9670; Repeat &#9670; GOTTA.BIKE &#9670; Ride &#9670; Build &#9670; Race &#9670; Repeat &#9670; GOTTA.BIKE &#9670;&nbsp;</span>
+        </div>
+    </div>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5">
+    <section id="projects" class="section-projects">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Projects</h2>
-                <p class="text-muted">Web Apps, Self-hosted, Open source Chrome plugins, and research</p>
+            <div class="section-head reveal">
+                <p class="section-kicker">The garage</p>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-sub">Web apps, self-hosted platforms, open-source plugins, and research.</p>
             </div>
             <div class="row g-4">
-                                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm portfolio-card">
-                        <img src="images/teams_gotta_bike.png" class="card-img-top" alt="Teams GOTTA.BIKE" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Teams GOTTA.BIKE</h5>
-                            <p class="card-text text-muted">Cycling League and Team Management Software. Free and Open Source web application.</p>
+                                <div class="col-md-6 col-lg-4 reveal">
+                    <article class="ride-card">
+                        <div class="ride-card__media">
+                            <img src="images/worlds_gotta_bike.png" class="ride-card__img" alt="Screenshot of World of Cycling" loading="lazy">
+                            <span class="ride-card__plate" aria-hidden="true">01</span>
                         </div>
-                        <div class="card-footer bg-transparent border-0">
-                            <a href="https://teams.gotta.bike/" class="btn btn-outline-primary btn-sm">View Project</a>
+                        <div class="ride-card__body">
+                            <p class="ride-card__tag">Web app</p>
+                            <h3 class="ride-card__title">World of Cycling</h3>
+                            <p class="ride-card__desc">A curated feed of cycling videos, news, and events. Create an account and build your own feeds.</p>
                         </div>
-                    </div>
+                        <div class="ride-card__footer">
+                            <a href="https://worlds.gotta.bike/" class="ride-link">View Project<span class="ride-link__arrow" aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </article>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm portfolio-card">
-                        <img src="images/virtual_teams.png" class="card-img-top" alt="Virtual Teams (Zwift) GOTTA.BIKE" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Virtual Teams (Zwift) GOTTA.BIKE</h5>
-                            <p class="card-text text-muted">Self-hosted web platform for managing virtual cycling teams on Zwift, Traning peaks Virtual, MyWhoosh.</p>
+                <div class="col-md-6 col-lg-4 reveal">
+                    <article class="ride-card">
+                        <div class="ride-card__media">
+                            <div class="ride-card__img ride-card__img--empty" aria-hidden="true"><i class="bi bi-bicycle"></i></div>
+                            <span class="ride-card__plate" aria-hidden="true">02</span>
                         </div>
-                        <div class="card-footer bg-transparent border-0">
-                            <a href="https://github.com/vincentdavis/GOTTA_BIKE_virtual_team_platform" class="btn btn-outline-primary btn-sm">View Project</a>
+                        <div class="ride-card__body">
+                            <p class="ride-card__tag">Game · Early alpha</p>
+                            <h3 class="ride-card__title">Gotta Bike Fast</h3>
+                            <p class="ride-card__desc">A Zwift-style indoor cycling game. Ride real GPX courses in 3D, race friends with live ghosts, and pair your real BLE power meter, heart-rate strap, and smart trainer.</p>
                         </div>
-                    </div>
+                        <div class="ride-card__footer">
+                            <a href="https://github.com/vincentdavis/gotta-bike-fast" class="ride-link">View Project<span class="ride-link__arrow" aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </article>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm portfolio-card">
-                        <img src="images/worlds_gotta_bike.png" class="card-img-top" alt="World of Cycling" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">World of Cycling</h5>
-                            <p class="card-text text-muted">A curated list of cycling video, news, events. Create your own account with your own feeds</p>
+                <div class="col-md-6 col-lg-4 reveal">
+                    <article class="ride-card">
+                        <div class="ride-card__media">
+                            <img src="images/virtual_teams.png" class="ride-card__img" alt="Screenshot of Virtual Teams (Zwift) GOTTA.BIKE" loading="lazy">
+                            <span class="ride-card__plate" aria-hidden="true">03</span>
                         </div>
-                        <div class="card-footer bg-transparent border-0">
-                            <a href="https://worlds.gotta.bike/" class="btn btn-outline-primary btn-sm">View Project</a>
+                        <div class="ride-card__body">
+                            <p class="ride-card__tag">Self-hosted</p>
+                            <h3 class="ride-card__title">Virtual Teams (Zwift) GOTTA.BIKE</h3>
+                            <p class="ride-card__desc">Self-hosted web platform for managing virtual cycling teams on Zwift, TrainingPeaks Virtual, and MyWhoosh.</p>
                         </div>
-                    </div>
+                        <div class="ride-card__footer">
+                            <a href="https://github.com/vincentdavis/GOTTA_BIKE_virtual_team_platform" class="ride-link">View Project<span class="ride-link__arrow" aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </article>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm portfolio-card">
-                        <img src="images/print_gotta_bike.png" class="card-img-top" alt="3D printed Rides" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">3D printed Rides</h5>
-                            <p class="card-text text-muted">Create a 3D print print so your ride. Converts a GPX file to a STL file</p>
+                <div class="col-md-6 col-lg-4 reveal">
+                    <article class="ride-card">
+                        <div class="ride-card__media">
+                            <img src="images/print_gotta_bike.png" class="ride-card__img" alt="Screenshot of 3D Printed Rides" loading="lazy">
+                            <span class="ride-card__plate" aria-hidden="true">04</span>
                         </div>
-                        <div class="card-footer bg-transparent border-0">
-                            <a href="https://print.gotta.bike/" class="btn btn-outline-primary btn-sm">View Project</a>
+                        <div class="ride-card__body">
+                            <p class="ride-card__tag">Web app</p>
+                            <h3 class="ride-card__title">3D Printed Rides</h3>
+                            <p class="ride-card__desc">Turn a ride into a 3D print. Converts a GPX file into a printable STL model.</p>
                         </div>
-                    </div>
+                        <div class="ride-card__footer">
+                            <a href="https://print.gotta.bike/" class="ride-link">View Project<span class="ride-link__arrow" aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </article>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm portfolio-card">
-                        <img src="images/clubladder_chrome.png" class="card-img-top" alt="ClubLadder Chrome plugin" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">ClubLadder Chrome plugin</h5>
-                            <p class="card-text text-muted">A Chrome extension to export data from [ClubLadder](https://ladder.cycleracing.club/) to CSV or json.</p>
+                <div class="col-md-6 col-lg-4 reveal">
+                    <article class="ride-card">
+                        <div class="ride-card__media">
+                            <img src="images/clubladder_chrome.png" class="ride-card__img" alt="Screenshot of ClubLadder Chrome Plugin" loading="lazy">
+                            <span class="ride-card__plate" aria-hidden="true">05</span>
                         </div>
-                        <div class="card-footer bg-transparent border-0">
-                            <a href="https://github.com/vincentdavis/GOTTA_BIKE_club_laddder_ext/releases" class="btn btn-outline-primary btn-sm">View Project</a>
+                        <div class="ride-card__body">
+                            <p class="ride-card__tag">Chrome extension</p>
+                            <h3 class="ride-card__title">ClubLadder Chrome Plugin</h3>
+                            <p class="ride-card__desc">A Chrome extension to export data from <a href="https://ladder.cycleracing.club/" target="_blank" rel="noopener">ClubLadder</a> to CSV or JSON.</p>
                         </div>
-                    </div>
+                        <div class="ride-card__footer">
+                            <a href="https://github.com/vincentdavis/GOTTA_BIKE_club_laddder_ext/releases" class="ride-link">View Project<span class="ride-link__arrow" aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </article>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm portfolio-card">
-                        <img src="images/sauce_plugin.png" class="card-img-top" alt="Suace4Zwift plugin" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Suace4Zwift plugin</h5>
-                            <p class="card-text text-muted">A Sauce4Zwift mod with features focused on pre-race strategy planning and live race monitoring.</p>
+                <div class="col-md-6 col-lg-4 reveal">
+                    <article class="ride-card">
+                        <div class="ride-card__media">
+                            <img src="images/sauce_plugin.png" class="ride-card__img" alt="Screenshot of Sauce4Zwift Plugin" loading="lazy">
+                            <span class="ride-card__plate" aria-hidden="true">06</span>
                         </div>
-                        <div class="card-footer bg-transparent border-0">
-                            <a href="https://github.com/vincentdavis/GOTTA_BIKE_sauce" class="btn btn-outline-primary btn-sm">View Project</a>
+                        <div class="ride-card__body">
+                            <p class="ride-card__tag">Sauce4Zwift mod</p>
+                            <h3 class="ride-card__title">Sauce4Zwift Plugin</h3>
+                            <p class="ride-card__desc">A Sauce4Zwift mod with features focused on pre-race strategy planning and live race monitoring.</p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm portfolio-card">
-                        <img src="images/marginal_gains.png" class="card-img-top" alt="Marginal Gains" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Marginal Gains</h5>
-                            <p class="card-text text-muted">Experimental work with a goal to measure the efficacy of a ride or race.</p>
+                        <div class="ride-card__footer">
+                            <a href="https://github.com/vincentdavis/GOTTA_BIKE_sauce" class="ride-link">View Project<span class="ride-link__arrow" aria-hidden="true">&rarr;</span></a>
                         </div>
-                        <div class="card-footer bg-transparent border-0">
-                            <a href="https://marginal-gains.gotta.bike/" class="btn btn-outline-primary btn-sm">View Project</a>
-                        </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="site-footer">
+        <div class="road-line" aria-hidden="true"></div>
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0">&copy; 2024 GOTTA.BIKE, Vincent Davis. All rights reserved.</p>
+            <div class="row align-items-center gy-3 py-4">
+                <div class="col-md-4 text-center text-md-start">
+                    <a class="site-brand site-brand--footer" href="#hero">GOTTA<span class="brand-dot">.</span>BIKE</a>
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-white me-3"><i class="bi bi-github fs-4"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-linkedin fs-4"></i></a>
-                    <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-4"></i></a>
-                    <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+                <div class="col-md-4 text-center footer-note">
+                    <p class="mb-0">&copy; 2026 GOTTA.BIKE &middot; Vincent Davis</p>
+                    <p class="mb-0 footer-legal"><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+                </div>
+                <div class="col-md-4 text-center text-md-end footer-social">
+                    <a href="https://github.com/vincentdavis" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.linkedin.com/in/vincentdavis/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://discord.com/users/588793677317537811" target="_blank" rel="noopener" aria-label="Discord"><i class="bi bi-discord"></i></a>
                 </div>
             </div>
         </div>

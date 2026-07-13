@@ -7,17 +7,18 @@ Portfolio website for cycling projects by Vincent Davis.
 ```
 content/
   hero.md                   # Hero section (title + body text)
-  about.md                  # About page content
-  contact.md                # Contact page (email, phone, location)
+  contact.md                # Contact page (github, discord, location)
+  privacy.md                # Privacy policy page content
+  terms.md                  # Terms of service page content
   portfolio/
-    01_3d_printed_rides.md   # One file per portfolio card
-    02_world_of_cycling.md   # Number prefix controls display order
+    01_world_of_cycling.md   # One file per portfolio card
+    05_gotta_bike_fast.md    # Number prefix controls display order
     ...
 templates/
   index.html                # Home page template
-  about.html                # About page template
   contact.html              # Contact page template
-build.py                    # Generates index.html, about.html, contact.html
+  legal.html                # Shared template for privacy + terms pages
+build.py                    # Generates index, contact, privacy, terms pages
 ```
 
 ## Editing Content
@@ -37,32 +38,41 @@ by: Vincent Davis
 
 ### Portfolio Cards
 
-Add or edit files in `content/portfolio/`. Files are sorted by name, so use a number prefix to control order (e.g. `01_`, `02_`).
+Add or edit files in `content/portfolio/`. Files are sorted by name, so use a number prefix to control order (e.g. `01_`, `02_`). Cards get a race-plate number (01, 02, ...) from their sort position.
 
 ```markdown
 ---
 title: Project Name
+tag: Web app
 image: images/screenshot.png
 link: https://example.com
 link_text: View Project
 ---
 
-Description of the project goes here.
+Description of the project goes here. Inline [links](https://example.com) and **bold** are supported.
 ```
 
-- `image` — path to an image in `images/`, or leave empty for a placeholder icon
+- `tag` — short category label shown above the title (e.g. `Web app`, `Chrome extension`, `Research`); optional
+- `image` — path to an image in `images/`, or leave empty for a styled bike-icon placeholder
 - `link` — URL to the live project, or `"#"` if not yet available
 
-### About Page
+### Privacy & Terms Pages
 
-Edit `content/about.md`:
+Edit `content/privacy.md` and `content/terms.md`. Both use `templates/legal.html`.
 
 ```markdown
 ---
-title: About Me
+title: Privacy Policy
+updated: July 13, 2026
+notice: Draft — this policy is a working draft and may change.
+description: Meta description for the page.
 ---
 
-Your about text here. Separate paragraphs with blank lines.
+Intro paragraph.
+
+## Section Heading
+
+Section text. Separate paragraphs with blank lines; `## ` starts a new section.
 ```
 
 ### Contact Page
@@ -87,4 +97,12 @@ Requires Python 3. No external dependencies.
 uv run build.py
 ```
 
-This generates `index.html`, `about.html`, and `contact.html` from the templates and content files.
+This generates `index.html`, `contact.html`, `privacy.html`, and `terms.html` from the templates and content files. The build also fills two global placeholders in every template: `{{year}}` (current year, used in the footer copyright) and `{{project_count}}` (number of portfolio cards).
+
+## Previewing
+
+Serve the folder and open http://localhost:8137:
+
+```sh
+python3 -m http.server 8137
+```
