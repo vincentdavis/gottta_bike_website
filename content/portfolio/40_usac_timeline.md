@@ -1,7 +1,7 @@
 ---
 title: USAC Event Timeline
 tag: Data viz
-image: images/usac_timeline.png
+image: images/usac_events_2014.jpg
 link: https://usac-timeline.gotta.bike/
 link_text: View Project
 ---
